@@ -16,23 +16,28 @@
             font-family: Arial, sans-serif;
         }
 
-        img, video {
+        iframe, img {
             width: 100%;
+            max-width: 1000px;
             height: auto;
         }
 
-        video {
+        iframe {
+            aspect-ratio: 16 / 9; /* Keeps video proportions */
             border: 2px solid #ccc;
             border-radius: 8px;
         }
     </style>
 </head>
 <body>
-    <!-- Video -->
-    <video controls autoplay>
-        <source src="https://www.youtube.com/embed/watch?v=2twUiMhj6A4?autoplay=1&mute=1">
-        Your browser does not support the video tag.
-    </video>
+    <!-- YouTube Video Embed -->
+    <iframe 
+        src="https://www.youtube.com/embed/2twUiMhj6A4?autoplay=1&mute=1" 
+        title="VPWest" 
+        frameborder="0" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+        allowfullscreen>
+    </iframe>
 
     <!-- Logo -->
     <img src="logo.jpg" alt="My Logo">
