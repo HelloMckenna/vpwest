@@ -1,0 +1,71 @@
+/*
+  [JS Index]
+*/
+
+
+/* 
+  1. preloader
+  2. navigation
+    2.1. navigation panels
+    2.2. navigation links
+	2.3. navigation dropdown
+  3. swiper slider
+*/
+
+
+$(function() {
+    "use strict";
+	
+	
+    // 1. preloader
+    $("#preloader").fadeOut(1000);
+    $(".preloader-bg").delay(800).fadeOut(1000);
+	
+    // 2. navigation
+    // 2.1. navigation panels
+    $(".navigation-fire").on("click", function() {
+        if ($(".panel-from-left, .panel-from-right, .panel-overlay-from-left, .panel-overlay-from-right").hasClass("open")) {
+            $(".panel-from-left, .panel-from-right, .panel-overlay-from-left, .panel-overlay-from-right").removeClass("open");
+        } else {
+            $(".panel-from-left, .panel-from-right, .panel-overlay-from-left, .panel-overlay-from-right").addClass("open");
+        }
+    });
+    // 2.2. navigation links
+    $("nav.navigation-menu a").on("click", function() {
+        $(".panel-from-left, .panel-from-right, .panel-overlay-from-left, .panel-overlay-from-right").removeClass("open");
+    });
+	// 2.3. navigation dropdown
+    $(".menu-item-has-children ul").hide();
+    $(".menu-item-has-children").on("click", function() {
+        var submenu = $(this).children(".sub-menu");
+        if ($(submenu).is(":hidden")) {
+            $(submenu).slideDown(400);
+        } else {
+            $(submenu).slideUp(400);
+        }
+    });
+    $(".menu-item-home").on("click", function() {
+        $(".panel-from-left, .panel-from-right, .panel-overlay-from-left, .panel-overlay-from-right").addClass("open");
+    });
+	
+    // 3. swiper slider
+    var swiper = new Swiper(".swiper-container-wrapper .swiper-container", {
+        preloadImages: false,
+        autoplay: false,
+        init: true,
+        loop: false,
+        grabCursor: false,
+        mousewheel: false,
+        keyboard: false,
+        simulateTouch: false,
+        parallax: false,
+        pagination: false,
+        navigation: false,
+		scrollbar: {
+            el: ".swiper-scrollbar",
+            draggable: true
+        }
+    });
+	
+	
+});
