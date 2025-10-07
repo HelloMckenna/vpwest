@@ -1,0 +1,150 @@
+/* Start custom CSS for bdevs-form, class: .elementor-element-37b2fcc *//* ==============================
+   FORMULARIO #2705 – ESTILO STYLEX
+   ============================== */
+
+/* 1 ▸ Ocultar etiquetas, sub-etiquetas y asteriscos de “obligatorio” */
+#wpforms-2705 .wpforms-field-label,
+#wpforms-2705 .wpforms-required-label,
+#wpforms-2705 .wpforms-field-sublabel       {display:none !important;}
+
+/* 2 ▸ Campos de texto y textarea: fondo transparente + línea inferior blanca */
+#wpforms-2705 input[type="text"],
+#wpforms-2705 input[type="email"],
+#wpforms-2705 textarea{
+    background:transparent !important;
+    border:none !important;
+    border-bottom:1px solid #fff !important;
+    border-radius:0 !important;
+    width:100% !important;
+    padding:12px 0 !important;
+    color:#fff !important;
+    font-size:16px !important;
+}
+#wpforms-2705 ::placeholder{color:#fff !important; opacity:.6 !important;}
+
+/* 3 ▸ Nombre + Apellidos en dos columnas (≥768 px) */
+@media (min-width:768px){
+  #wpforms-2705 .wpforms-field-name .wpforms-field-row-block{
+      width:50% !important;
+      float:left !important;
+      padding:0 15px !important;
+  }
+  #wpforms-2705 .wpforms-field-name .wpforms-field-row-block:first-child{padding-left:0 !important;}
+  #wpforms-2705 .wpforms-field-name .wpforms-field-row-block:last-child {padding-right:0 !important;}
+}
+
+/* 4 ▸ Separación vertical uniforme entre campos */
+#wpforms-2705 .wpforms-field{margin-bottom:40px !important;}
+
+/* 5 ▸ Botón redondo con borde discontinuo */
+#wpforms-submit-2705{
+    display:block !important;
+    margin:40px auto !important;
+    width:140px !important;
+    height:140px !important;
+    border:2px dashed #fff !important;
+    border-radius:50% !important;
+    background:none !important;
+    color:#fff !important;
+    text-transform:uppercase !important;
+    font-weight:600 !important;
+    letter-spacing:1px !important;
+    transition:all .3s ease !important;
+}
+#wpforms-submit-2705:hover{
+    background:#fff !important;
+    color:#000 !important;
+    cursor:pointer !important;
+}
+
+/* 6 ▸ Ocultar el spinner de envío para que no rompa el círculo */
+#wpforms-2705 .wpforms-submit-spinner{display:none !important;}
+
+/* 7 ▸ Quitar el contorno azul del navegador al hacer foco */
+#wpforms-2705 input:focus,
+#wpforms-2705 textarea:focus{outline:none !important;}
+
+/* --- ETIQUETAS VISIBLES EN BLANCO --- */
+#wpforms-2705 .wpforms-field-label{
+    display:block !important;      /* vuelve a mostrarlas            */
+    color:#fff !important;         /* blanco, como las barras        */
+    font-size:14px !important;     /* ajusta a tu gusto              */
+    font-weight:600 !important;
+    margin-bottom:10px !important; /* separación sobre el campo      */
+}
+/* Asterisco de “obligatorio” */
+#wpforms-2705 .wpforms-required-label{
+    display:inline !important;
+    color:#fff !important;
+}
+
+/* --- Seguimos ocultando las sub-etiquetas de Nombre/Apellidos --- */
+#wpforms-2705 .wpforms-field-sublabel{display:none !important;}
+
+/* ===== BOTÓN EN ESTILO AMARILLO “BLOB” ===== */
+#wpforms-submit-2705{
+    /* tamaño y forma */
+    width:140px !important;
+    height:140px !important;
+    border-radius:50% !important;
+
+    /* contorno amarillo lima */
+    border:6px solid #e5ff27 !important;
+
+    /* color de texto */
+    color:#e5ff27 !important;
+    background:none !important;
+
+    /* tipografía */
+    text-transform:uppercase !important;
+    font-weight:600 !important;
+    letter-spacing:1px !important;
+
+    /* animación detenida por defecto */
+    animation:none !important;
+    transition:all .3s ease !important;
+}
+
+/* animación “blob” al pasar el ratón */
+#wpforms-submit-2705:hover,
+#wpforms-submit-2705:focus{
+    animation:blob 8s ease-in-out infinite !important;
+    cursor:pointer !important;
+}
+
+/* mismo keyframes que usas en el resto de la web */
+@keyframes blob{
+    0%   {border-radius:50%;                                    transform:scale(1);}
+    8%   {border-radius:68% 32% 72% 28%/65% 35% 70% 30%;        transform:scale(1.05);}
+    18%  {border-radius:35% 65% 38% 62%/55% 45% 60% 40%;        transform:scale(1.08);}
+    30%  {border-radius:60% 40% 45% 55%/40% 60% 35% 65%;        transform:scale(1.04);}
+    45%  {border-radius:70% 30% 60% 40%/50% 50% 45% 55%;        transform:scale(1.10);}
+    60%  {border-radius:38% 62% 48% 52%/62% 38% 58% 42%;        transform:scale(1.06);}
+    78%  {border-radius:58% 42% 72% 28%/32% 68% 40% 60%;        transform:scale(1.09);}
+    100% {border-radius:50%;                                    transform:scale(1);}
+}
+
+/* ocultamos el spinner para que no rompa el círculo */
+#wpforms-2705 .wpforms-submit-spinner{display:none !important;}
+
+/* ================================================================
+   Alinear el campo “Comentario o mensaje” con el resto
+   ================================================================ */
+@media (min-width:768px){                 /*-solo en escritorio-*/
+  /* 1 ▸ contenedor del textarea */
+  #wpforms-2705 .wpforms-field-textarea{
+      width:50% !important;      /* mismo ancho que los otros */
+      float:left !important;     /* se coloca en esa mitad    */
+     
+  }
+
+  /* 2 ▸ el textarea debe llenar su contenedor al 100 %        */
+  #wpforms-2705 .wpforms-field-textarea textarea{
+      width:100% !important;
+  }
+  
+   #wpforms-2705-field_3-container{
+      margin-left:11% !important;
+  }
+  }
+}/* End custom CSS */
